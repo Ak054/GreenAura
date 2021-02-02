@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GreenAura.Models.ProductInfo>
+
+@{
+    ViewData["Title"] = "ViewAllProducts";
+}
+<h1 class="text-center">View Product</h1>
+<hr />
+<p>Please type something in the input text field to search the dersired Product:</p>
+<input class="form-control" id="myInput" type="text" placeholder="Search..">
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Price in Dollars
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Product Type
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlantType.PlantTypeName)
+                </td>
+                <td>
+                    <a asp-action="ProductDetails" class="btn btn-success" asp-route-id="@item.ProductID">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

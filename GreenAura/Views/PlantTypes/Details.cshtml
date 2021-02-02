@@ -1,0 +1,23 @@
+﻿@model GreenAura.Models.PlantType
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center">Plant Type Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlantTypeName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PlantTypeName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@Model.PlantTypeID">Edit</a> |
+    <a asp-action="Index">View All Plant Type</a>
+</div>

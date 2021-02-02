@@ -1,0 +1,35 @@
+﻿@model IEnumerable<GreenAura.Models.PlantType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">View All Plant Type</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Plant Type</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PlantTypeName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlantTypeName)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.PlantTypeID">Edit</a> |
+                <a asp-action="Details" class="btn btn-success"  asp-route-id="@item.PlantTypeID">Details</a> |
+                <a asp-action="Delete" class="btn btn-warning"  asp-route-id="@item.PlantTypeID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

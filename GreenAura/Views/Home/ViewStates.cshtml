@@ -1,0 +1,20 @@
+﻿@model IEnumerable<GreenAura.Models.State>
+
+@{
+    ViewData["Title"] = "ViewStates";
+}
+
+<h1 class="text-center">View Location by States</h1>
+<div class="card-columns">
+    @foreach (var item in Model)
+    {
+        <div class="card bg-info">
+            <div class="card-body text-center">
+                <p class="card-text">
+                    <a class="font-weight-bolder text-black-50" asp-action="ViewStateLocation" asp-route-id="@item.StateID">@item.StateName</a>
+                </p>
+            </div>
+        </div>
+    }
+</div>
+<h1 class="text-center"><a class="btn btn-success" asp-action="ViewAllLocation">View All Location</a></h1>

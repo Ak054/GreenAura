@@ -1,0 +1,20 @@
+﻿@model IEnumerable<GreenAura.Models.PlantType>
+
+@{
+    ViewData["Title"] = "ViewTypes";
+}
+
+<h1 class="text-center">View All Product Types</h1>
+<div class="card-columns">
+    @foreach (var item in Model)
+    {
+        <div class="card bg-info">
+            <div class="card-body text-center">
+                <p class="card-text">
+                    <a class="font-weight-bolder text-black-50" asp-action="ViewProductByType" asp-route-id="@item.PlantTypeID">@item.PlantTypeName</a>
+                </p>
+            </div>
+        </div>
+    }
+</div>
+<h1 class="text-center"><a class="btn btn-success" asp-action="ViewAllProducts">View All Product</a></h1>

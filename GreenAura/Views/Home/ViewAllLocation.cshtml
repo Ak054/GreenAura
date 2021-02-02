@@ -1,0 +1,29 @@
+﻿@model IEnumerable<GreenAura.Models.Location>
+
+@{
+    ViewData["Title"] = "ViewAllLocation";
+}
+
+<h1 class="text-center">View All Location</h1>
+
+
+
+@foreach (var item in Model)
+{
+    <div class="card mb-1">
+        <div class="card-header bg-primary"><h2>@Html.DisplayFor(modelItem => item.LocationName)</h2></div>
+        <div class="card-body">
+            <h4>Address</h4>
+            <p>
+                @Html.DisplayFor(modelItem => item.AddressLine1)
+                <br />
+                @Html.DisplayFor(modelItem => item.AddressLine2)
+            </p>
+            <h4>Contact No</h4>
+            <p>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </p>
+        </div>
+
+    </div>
+}
